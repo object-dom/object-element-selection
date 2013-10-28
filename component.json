@@ -1,0 +1,20 @@
+{
+  "name": "object-element-selection",
+  "repo": "shallker/object-element-selection",
+  "description": "ObjectElement selection",
+  "version": "0.0.1",
+  "keywords": [],
+  "paths": ["../"],
+  "local": ["object-element"],
+  "dependencies": {},
+  "development": {
+    "shallker/simple-test": "*", 
+    "shallker/dom-helper": "*" 
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "lib/object-element-selection.js"
+  ]
+}

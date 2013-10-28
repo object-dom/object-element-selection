@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <script src="/build/build.js"></script>
+    <script>
+      var dom = require('dom-helper');
+      var test = require('simple-test');
+      var ObjectElement = require('object-element');
+          require('object-element-selection');
+
+      test('objectElement.parent', function () {
+        var div = dom.insertDiv('div');
+        var div1 = dom.insertDiv('div1');
+        var div2 = dom.insertDiv('div2');
+        var div3 = dom.insertDiv('div3');
+        var objectDiv2 = new ObjectElement(div2);
+
+        div.appendChild(div1);
+        div.appendChild(div2);
+        div.appendChild(div3);
+
+        test.eq(objectDiv2.parent.element, div);
+        dom.remove(div);
+      });
+      </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <script src="/build/build.js"></script>
+    <script>
+      var dom = require('dom-helper');
+      var test = require('simple-test');
+      var ObjectElement = require('object-element');
+          require('object-element-selection');
+
+      test('objectElement.select(selector)', function () {
+        var div = dom.insertDiv('div', 'div');
+        var div1 = dom.insertDiv('div1', 'div1 div');
+        var div2 = dom.insertDiv('div2', 'div2 div');
+        var div3 = dom.insertDiv('div3', 'div3 div');
+        var objectDiv = new ObjectElement(div);
+
+        div.appendChild(div1);
+        div1.appendChild(div2);
+        div2.appendChild(div3);
+
+        test.eq(objectDiv.select('.div').length, 3);
+        test.eq(objectDiv.select('.div1').length, 1);
+        test.eq(objectDiv.select('.div1')[0].element, div1);
+        test.eq(objectDiv.select('.div2').length, 1);
+        test.eq(objectDiv.select('.div2')[0].element, div2);
+        test.eq(objectDiv.select('.div3').length, 1);
+        test.eq(objectDiv.select('.div3')[0].element, div3);
+        dom.remove(div);
+      });
+
+      test('objectElement.selectFirst(selector)', function () {
+        var div = dom.insertDiv('div', 'div');
+        var div1 = dom.insertDiv('div1', 'div1 div');
+        var div2 = dom.insertDiv('div2', 'div2 div');
+        var div3 = dom.insertDiv('div3', 'div3 div');
+        var objectDiv = new ObjectElement(div);
+
+        div.appendChild(div1);
+        div1.appendChild(div2);
+        div2.appendChild(div3);
+
+        test.eq(objectDiv.selectFirst('.div').element, div1);
+        dom.remove(div);
+      });
+
+      test('objectElement.selectLast(selector)', function () {
+        var div = dom.insertDiv('div', 'div');
+        var div1 = dom.insertDiv('div1', 'div1 div');
+        var div2 = dom.insertDiv('div2', 'div2 div');
+        var div3 = dom.insertDiv('div3', 'div3 div');
+        var objectDiv = new ObjectElement(div);
+
+        div.appendChild(div1);
+        div1.appendChild(div2);
+        div2.appendChild(div3);
+
+        test.eq(objectDiv.selectLast('.div').element, div3);
+        dom.remove(div);
+      });
+
+      </script>
+  </body>
+</html>
