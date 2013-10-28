@@ -4,9 +4,9 @@
   "description": "ObjectElement selection",
   "version": "0.0.1",
   "keywords": [],
-  "paths": ["../"],
-  "local": ["object-element"],
-  "dependencies": {},
+  "dependencies": {
+    "object-element/object-element": "*"
+  },
   "development": {
     "shallker/simple-test": "*", 
     "shallker/dom-helper": "*" 
