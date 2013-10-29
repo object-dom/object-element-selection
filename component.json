@@ -4,8 +4,11 @@
   "description": "ObjectElement selection",
   "version": "0.0.1",
   "keywords": [],
+  "paths": ["../"],
+  "local": [],
   "dependencies": {
-    "object-dom/object-element": "*"
+    "object-dom/object-element": "*",
+    "object-dom/object-document": "*"
   },
   "development": {
     "shallker/simple-test": "*", 
