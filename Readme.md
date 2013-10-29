@@ -29,8 +29,8 @@
 ##### .selectSiblings()
 ##### .selectPrevSiblings()
 ##### .selectNextSiblings()
-##### .selectPrevtSibling()
-##### .selectNexttSibling()
+##### .selectPrevSibling()
+##### .selectNextSibling()
 ##### .selectFirstSibling()
 ##### .selectLastSibling()
 
