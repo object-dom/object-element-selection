@@ -1,11 +1,11 @@
 {
   "name": "object-element-selection",
-  "repo": "shallker/object-element-selection",
+  "repo": "object-dom/object-element-selection",
   "description": "ObjectElement selection",
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "object-element/object-element": "*"
+    "object-dom/object-element": "*"
   },
   "development": {
     "shallker/simple-test": "*", 
