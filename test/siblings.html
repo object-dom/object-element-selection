@@ -41,38 +41,6 @@
         dom.remove(div);
       });
 
-      test('objectElement.selectPrevSibling(selector)', function () {
-        var div = dom.insertDiv('div', 'div');
-        var div1 = dom.insertDiv('div1', 'div1');
-        var div2 = dom.insertDiv('div2', 'div2');
-        var div3 = dom.insertDiv('div3', 'div3');
-        var objectDiv3 = new ObjectElement(div3);
-
-        div.appendChild(div1);
-        div.appendChild(div2);
-        div.appendChild(div3);
-
-        test.eq(objectDiv3.selectPrevSibling('.div1').element, div1);
-        test.eq(objectDiv3.selectPrevSibling('.div2').element, div2);
-        dom.remove(div);
-      });
-
-      test('objectElement.selectNextSibling(selector)', function () {
-        var div = dom.insertDiv('div', 'div');
-        var div1 = dom.insertDiv('div1', 'div1');
-        var div2 = dom.insertDiv('div2', 'div2');
-        var div3 = dom.insertDiv('div3', 'div3');
-        var objectDiv1 = new ObjectElement(div1);
-
-        div.appendChild(div1);
-        div.appendChild(div2);
-        div.appendChild(div3);
-
-        test.eq(objectDiv1.selectNextSibling('.div2').element, div2);
-        test.eq(objectDiv1.selectNextSibling('.div3').element, div3);
-        dom.remove(div);
-      });
-
       test('objectElement.prevSiblings', function () {
         var div = dom.insertDiv('div');
         var div1 = dom.insertDiv('div1');
@@ -121,6 +89,38 @@
         test.eq(objectDiv2.siblings.length, 2);
         test.eq(objectDiv2.siblings[0].element, div1);
         test.eq(objectDiv2.siblings[1].element, div3);
+        dom.remove(div);
+      });
+
+      test('objectElement.selectPrevSibling(selector)', function () {
+        var div = dom.insertDiv('div', 'div');
+        var div1 = dom.insertDiv('div1', 'div1');
+        var div2 = dom.insertDiv('div2', 'div2');
+        var div3 = dom.insertDiv('div3', 'div3');
+        var objectDiv3 = new ObjectElement(div3);
+
+        div.appendChild(div1);
+        div.appendChild(div2);
+        div.appendChild(div3);
+
+        test.eq(objectDiv3.selectPrevSibling('.div1').element, div1);
+        test.eq(objectDiv3.selectPrevSibling('.div2').element, div2);
+        dom.remove(div);
+      });
+
+      test('objectElement.selectNextSibling(selector)', function () {
+        var div = dom.insertDiv('div', 'div');
+        var div1 = dom.insertDiv('div1', 'div1');
+        var div2 = dom.insertDiv('div2', 'div2');
+        var div3 = dom.insertDiv('div3', 'div3');
+        var objectDiv1 = new ObjectElement(div1);
+
+        div.appendChild(div1);
+        div.appendChild(div2);
+        div.appendChild(div3);
+
+        test.eq(objectDiv1.selectNextSibling('.div2').element, div2);
+        test.eq(objectDiv1.selectNextSibling('.div3').element, div3);
         dom.remove(div);
       });
 
